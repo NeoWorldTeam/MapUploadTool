@@ -364,28 +364,28 @@ public class CustomToolWindow : EditorWindow
         Debug.Log("任务结束");
         //test
 
-        await Task.Delay(5000);
-        AssetBundle assetBundle = await uploadNetworkTool.DownloadAssetBundle(backgroundUrl);
-        if (assetBundle == null)
-        {
-            Debug.LogError("assetBundle is null");
-            state = RunningState.UploadFail;
-            return ;
-        }
-        GameObject backgroundPrefab = assetBundle.LoadAsset<GameObject>("Background");
-        if (backgroundPrefab == null)
-        {
-            Debug.LogError("backgroundPrefab is null");
-            state = RunningState.UploadFail;
-            return ;
-        }
-        GameObject testObject = Instantiate(backgroundPrefab);
-        testObject.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+        // await Task.Delay(5000);
+        // AssetBundle assetBundle = await uploadNetworkTool.DownloadAssetBundle(backgroundUrl);
+        // if (assetBundle == null)
+        // {
+        //     Debug.LogError("assetBundle is null");
+        //     state = RunningState.UploadFail;
+        //     return ;
+        // }
+        // GameObject backgroundPrefab = assetBundle.LoadAsset<GameObject>("Background");
+        // if (backgroundPrefab == null)
+        // {
+        //     Debug.LogError("backgroundPrefab is null");
+        //     state = RunningState.UploadFail;
+        //     return ;
+        // }
+        // GameObject testObject = Instantiate(backgroundPrefab);
+        // testObject.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
 
-        await Task.Delay(50000);
+        // await Task.Delay(50000);
 
-        DestroyImmediate(testObject);
-        assetBundle.Unload(true);
+        // DestroyImmediate(testObject);
+        // assetBundle.Unload(true);
     }
 
     private string SaveGameObjectAsPrefab(GameObject objectToSave, string prefabDirectory) {
